@@ -1,0 +1,4 @@
+After having someone play the memory game, I saw that it worked the way it was supposed to. The game lets you click 2 cards, and if it's a match, 
+they stay revealed, and if it's not a match, the flip back over. The game takes count of how many turns you take and how many matches you've made.
+When all the cards have been matched, the start button allows the game to make a full reset, where the cards are flipped back over and reshuffled
+and the scores and turns are set back to zero. The player enjoyed the game and thought it worked as how a memory game should work.
