@@ -808,6 +808,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 7330c7f209d98457ca46ed1feb340e7c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8f3508f9940654db5ade06952ce33bc3, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 7330c7f209d98457ca46ed1feb340e7c, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7330c7f209d98457ca46ed1feb340e7c, type: 3}
 --- !u!1 &829596502
