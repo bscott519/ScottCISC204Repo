@@ -15,6 +15,8 @@ public class RelativeMovement : MonoBehaviour
     public float terminalVelocity = -10.0f;
     public float minFall = -1.5f;
 
+    private Animator animator;
+
     private float vertSpeed;
 
     private ControllerColliderHit contact;
@@ -25,6 +27,7 @@ public class RelativeMovement : MonoBehaviour
     {
         vertSpeed = minFall;
         charController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
 
     }
 
@@ -57,6 +60,8 @@ public class RelativeMovement : MonoBehaviour
             hitGround = hit.distance <= check;
         }
 
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
         if (hitGround)
         {
             if (Input.GetButtonDown("Jump"))
@@ -66,6 +71,7 @@ public class RelativeMovement : MonoBehaviour
             else
             {
                 vertSpeed = minFall;
+                animator.SetBool("Jumping", false);
             }
         }
         else
@@ -74,6 +80,11 @@ public class RelativeMovement : MonoBehaviour
             if (vertSpeed < terminalVelocity)
             {
                 vertSpeed = terminalVelocity;
+            }
+
+            if (contact != null)
+            {
+                animator.SetBool("Jumping", true);
             }
 
             if (charController.isGrounded)
