@@ -26,6 +26,16 @@ public class BasicUI : MonoBehaviour
             posX += width+buffer;
         }
 
+        if (Managers.Player.health == 0)
+        {
+          GUI.Box(new Rect(posX+150, posY, width+300, height),
+            new GUIContent("The enemy has possessed your body!"));
+        }else
+        {
+          GUI.Box(new Rect(posX+150, posY, width, height),
+            new GUIContent($"Health : {Managers.Player.health}"));
+        }
+
         string equipped = Managers.Inventory.equippedItem;
         if (equipped != null)
         {
