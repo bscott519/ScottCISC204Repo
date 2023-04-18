@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour, IGameManager
 
    public int health { get; private set; }
    public int maxHealth { get; private set; }
+   public bool isDead {get; private set;}
 
     public void Startup()
     {
@@ -15,6 +16,7 @@ public class PlayerManager : MonoBehaviour, IGameManager
 
         health = 50;
         maxHealth = 100;
+        isDead = false;
 
         status = ManagerStatus.Started;
     }
@@ -29,6 +31,7 @@ public class PlayerManager : MonoBehaviour, IGameManager
         else if (health < 0)
         {
             health = 0;
+            isDead = true;
         }
 
         Debug.Log($"Health: {health}/{maxHealth}");

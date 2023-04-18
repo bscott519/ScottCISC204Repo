@@ -21,6 +21,7 @@ public class RelativeMovement : MonoBehaviour {
 	public float minFall = -1.5f;
 	public float pushForce = 3.0f;
 
+
 	private float vertSpeed;
 	private ControllerColliderHit contact;
 
@@ -38,6 +39,13 @@ public class RelativeMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 
+    if (Managers.Player.isDead == true)
+    {
+      moveSpeed = 0.0f;
+	    jumpSpeed = 0.0f;
+    }
+
+    Debug.Log(Managers.Player.isDead);
 		// start with zero and add movement components progressively
 		Vector3 movement = Vector3.zero;
 
